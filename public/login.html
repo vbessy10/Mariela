@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Inicio Sesion-Mariela</title>
+        <link rel="shortcut icon" href="img/icono-AA.ico">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/signin.css"> 
+    </head>
+    <body> 
+        <main>
+            <div>
+                <a class="py-2" href="index.html" title="Inicio">
+                    <img src="img/logo-AA.png" alt="Santiago" id="img-logo">
+                </a>
+            </div>  
+            <form class="form-signin">
+                <h1 class="h1 mb-3 font-weight-normal">Inicia Sesión</h1>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Correo" required autofocus>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+                <div class="checkbox mb-3">
+                    <label id="recuerdame">
+                        <input type="checkbox" value="remember-me"> Recúerdame
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-success btn-block" id="btn-login" type="submit">Iniciar Sesión</button>
+                <p>
+                    ¿No estas registrado? <a href="registro.html">Regístrate</a>
+                </p>
+                <!--p class="mt-5 mb-3 text-muted">&copy; 2017-{{ site.time | date: "%Y" }}</p-->
+            </form>
+        </main>
+        
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/popper.min.js"></script>
+    </body>
+</html>
