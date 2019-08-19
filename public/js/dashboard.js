@@ -12,58 +12,53 @@ var campos=[
 for(let i=0;i<campos.length;i++){
   console.log(campos[i]);
   $(`#${campos[i]}`).click(function(){
+    $('.active').removeClass('active');
     $('.mostrar').addClass('oculto');
     $('.mostrar').removeClass('mostrar');
+
+    if(campos[i] == 'nav-entrada' || campos[i] == 'a-entradas'){
+      $('#a-entradas').addClass('active');
+      $('#entrada').removeClass('oculto');
+      $('#entrada').addClass('mostrar');
+    }
+
+    if(campos[i] == 'nav-usuario' || campos[i] == 'a-usuarios'){
+      $('#a-usuarios').addClass('active');
+      $('#usuarios').removeClass('oculto');
+      $('#usuarios').addClass('mostrar');
+    }
+
+    if(campos[i] == 'nav-pagina' || campos[i] == 'a-paginas'){
+      $('#a-paginas').addClass('active');
+      $('#paginas').removeClass('oculto');
+      $('#paginas').addClass('mostrar');
+    }
+
+    if(campos[i] == 'a-escritorio'){
+      $('#a-escritorio').addClass('active');
+      $('#escritorio').removeClass('oculto');
+      $('#escritorio').addClass('mostrar');
+    }
+
+    if(campos[i] == 'a-medios'){
+      $('#a-medios').addClass('active');
+      $('#medios').removeClass('oculto');
+      $('#medios').addClass('mostrar');
+    }
+    
+    if(campos[i] == 'btn-addUsuario'){
+      $('#add-user').removeClass('oculto');
+      $('#add-user').addClass('mostrar');
+    }
+
   });
 }
-
-$("#nav-entrada").click(function(){
-  $('.active').removeClass('active');
-  $('#a-entradas').addClass('active');
-  $('#entrada').removeClass('oculto');
-  $('#entrada').addClass('mostrar');
-});
-$("#nav-usuario").click(function(){
-  $('.active').removeClass('active');
-  $('#a-usuarios').addClass('active');
-  $('#usuarios').removeClass('oculto');
-  $('#usuarios').addClass('mostrar');
-});
-$("#nav-pagina").click(function(){
-  $('.active').removeClass('active');
-  $('#a-paginas').addClass('active');
-  $('#paginas').removeClass('oculto');
-  $('#paginas').addClass('mostrar');
-});
-$("#a-escritorio").click(function(){
-  $('.active').removeClass('active');
-  $('#a-escritorio').addClass('active');
-  $('#escritorio').removeClass('oculto');
-  $('#escritorio').addClass('mostrar');
-});
-$("#a-medios").click(function(){
-  $('.active').removeClass('active');
-  $('#a-medios').addClass('active');
-  $('#medios').removeClass('oculto');
-  $('#medios').addClass('mostrar');
-});
-$("#a-paginas").click(function(){
-  $('.active').removeClass('active');
-  $('#a-paginas').addClass('active');
-  $('#paginas').removeClass('oculto');
-  $('#paginas').addClass('mostrar');
-});
-$("#a-entradas").click(function(){
-  $('.active').removeClass('active');
-  $('#a-entradas').addClass('active');
-  $('#entrada').removeClass('oculto');
-  $('#entrada').addClass('mostrar');
-});
 
 $("#contraer-menu").click(function(){
   alert('presiono cerrar menu');
   $('#nav-lateral').css({'max-width ':'5%'});
 });
+
 $(".e-perfil").click(function(){
   $('.active').removeClass('active');
   $('#a-usuarios').addClass('active');
@@ -72,16 +67,7 @@ $(".e-perfil").click(function(){
   $('#ed-perfil').removeClass('oculto');
   $('#ed-perfil').addClass('mostrar');
 });
-$("#a-usuarios").click(function(){
-  $('.active').removeClass('active');
-  $('#a-usuarios').addClass('active');
-  $('#usuarios').removeClass('oculto');
-  $('#usuarios').addClass('mostrar');
-});
-$("#btn-addUsuario").click(function(){
-  $('#add-user').removeClass('oculto');
-  $('#add-user').addClass('mostrar');
-});
+
 $("#btn-newContraseña").click(function(){
   $('#newPassword').removeAttr('disabled');
 });
