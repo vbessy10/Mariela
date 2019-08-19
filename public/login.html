@@ -7,6 +7,7 @@
         <title>Inicio Sesion-Mariela</title>
         <link rel="shortcut icon" href="img/icono-AA.ico">
         <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+        
         <link rel="stylesheet" href="css/signin.css"> 
     </head>
     <body> 
@@ -18,14 +19,14 @@
             </div>  
             <form class="form-signin">
                 <h1 class="h1 mb-3 font-weight-normal">Inicia Sesión</h1>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Correo" required autofocus>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Correo" autofocus>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña">
                 <div class="checkbox mb-3">
                     <label id="recuerdame">
                         <input type="checkbox" value="remember-me"> Recúerdame
                     </label>
                 </div>
-                <button class="btn btn-lg btn-success btn-block" id="btn-login" type="submit">Iniciar Sesión</button>
+                <button type="button" class="btn btn-lg btn-success btn-block" id="btn-login">Iniciar Sesión</button>
                 <p>
                     ¿No estas registrado? <a href="registro.html">Regístrate</a>
                 </p>
@@ -36,5 +37,6 @@
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/popper.min.js"></script>
+        <script src="js/login.js"></script>
     </body>
 </html>

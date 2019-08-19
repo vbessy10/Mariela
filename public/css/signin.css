@@ -122,25 +122,57 @@ form .form-control:focus {
   background-color: #ffd324;
   border: #f7c500
 }
-
 #recuerdame, p{
  font-size: 0.9rem;
 }
-
 a{
   font-size: 1.1rem;
   color: #fff;
 }
-
 a:hover{
   color: #fff;
   text-decoration: underline;
 }
-
 p{
   margin: auto;
   text-align: center;
 }
+.fas{
+  font-size: x-large;
+  color: #f7c500;
+}
+.d-fas{
+  margin: auto;
+  text-align: center;
+}
+.is-valid{
+  border: #457d1b solid 2px !important;
+}
+.is-invalid{
+  border: #ff0808 solid 2px !important;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
+.dropdown-content {
+  will-change: transform;
+  position: absolute;
+  color: rgb(1, 35, 63);
+  background-color: #f9f9f9;
+  min-width: 200%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  line-height: 1.15;
+  border-radius: 10px;
+  display: none;
+  z-index: 1;
+}
 
-
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown p{
+  font-size: 0.8rem;
+}
