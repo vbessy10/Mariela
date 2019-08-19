@@ -226,6 +226,29 @@ section{
   margin-top: 30px;
   margin-bottom: 30px;
 }
-.row .col-6{
+#escritorio .row .col-6{
   max-width: 47%;
+}
+.div-perfil{
+  padding: 5% 1%;
+  text-align: center;
+  border: #f7c500 solid 2px;
+}
+.ed-foto{
+  text-align: right;
+}
+.form-perfil{
+ padding: 5%;
+}
+.form-control{
+  margin: 0px;
+  margin-bottom:  20px;
+}
+.btn-warning{
+  color: #fff;
+  font-weight: bold;
+  margin: auto;
+  width: 60%;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }

@@ -38,7 +38,7 @@ $("#a-usuarios").click(function(){
   $('.active').removeClass('active');
   $('#a-usuarios').addClass('active');
   $('section').attr({hidden: "hidden"});
-  $('#entrada').removeAttr('hidden');
+  $('#usuarios').removeAttr('hidden');
 });
 $("#a-entradas").click(function(){
   $('.active').removeClass('active');
@@ -50,4 +50,14 @@ $("#a-entradas").click(function(){
 $("#contraer-menu").click(function(){
   alert('presiono cerrar menu');
   $('#nav-lateral').css({'max-width ':'5%'});
+});
+$(".e-perfil").click(function(){
+  $('.active').removeClass('active');
+  $('#a-usuarios').addClass('active');
+  $('section').attr({hidden: "hidden"});
+  $('#ed-perfil').removeAttr('hidden');
+});
+
+$("#btn-newContraseña").click(function(){
+  $('#newPassword').removeAttr('disabled');
 });
