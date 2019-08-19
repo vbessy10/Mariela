@@ -1,50 +1,63 @@
+var campos=[
+  'nav-entrada',
+  'nav-usuario',
+  'nav-pagina',
+  'a-escritorio',
+  'a-medios',
+  'a-paginas',
+  'a-entradas',
+  'a-usuarios',
+  'btn-addUsuario'
+];
+for(let i=0;i<campos.length;i++){
+  console.log(campos[i]);
+  $(`#${campos[i]}`).click(function(){
+    $('.mostrar').addClass('oculto');
+    $('.mostrar').removeClass('mostrar');
+  });
+}
+
 $("#nav-entrada").click(function(){
   $('.active').removeClass('active');
   $('#a-entradas').addClass('active');
-  $('section').attr({hidden: "hidden"});
-  $('#entrada').removeAttr('hidden');
+  $('#entrada').removeClass('oculto');
+  $('#entrada').addClass('mostrar');
 });
 $("#nav-usuario").click(function(){
   $('.active').removeClass('active');
   $('#a-usuarios').addClass('active');
-  $('section').attr({hidden: "hidden"});
-  $('#entrada').removeAttr('hidden');
+  $('#usuarios').removeClass('oculto');
+  $('#usuarios').addClass('mostrar');
 });
 $("#nav-pagina").click(function(){
   $('.active').removeClass('active');
   $('#a-paginas').addClass('active');
-  $('section').attr({hidden: "hidden"});
-  $('#paginas').removeAttr('hidden');
+  $('#paginas').removeClass('oculto');
+  $('#paginas').addClass('mostrar');
 });
 $("#a-escritorio").click(function(){
   $('.active').removeClass('active');
   $('#a-escritorio').addClass('active');
-  $('section').attr({hidden: "hidden"});
-  $('#escritorio').removeAttr('hidden');
+  $('#escritorio').removeClass('oculto');
+  $('#escritorio').addClass('mostrar');
 });
 $("#a-medios").click(function(){
   $('.active').removeClass('active');
   $('#a-medios').addClass('active');
-  $('section').attr({hidden: "hidden"});
-  $('#medios').removeAttr('hidden');
+  $('#medios').removeClass('oculto');
+  $('#medios').addClass('mostrar');
 });
 $("#a-paginas").click(function(){
   $('.active').removeClass('active');
   $('#a-paginas').addClass('active');
-  $('section').attr({hidden: "hidden"});
-  $('#paginas').removeAttr('hidden');
-});
-$("#a-usuarios").click(function(){
-  $('.active').removeClass('active');
-  $('#a-usuarios').addClass('active');
-  $('section').attr({hidden: "hidden"});
-  $('#usuarios').removeAttr('hidden');
+  $('#paginas').removeClass('oculto');
+  $('#paginas').addClass('mostrar');
 });
 $("#a-entradas").click(function(){
   $('.active').removeClass('active');
   $('#a-entradas').addClass('active');
-  $('section').attr({hidden: "hidden"});
-  $('#entrada').removeAttr('hidden');
+  $('#entrada').removeClass('oculto');
+  $('#entrada').addClass('mostrar');
 });
 
 $("#contraer-menu").click(function(){
@@ -54,10 +67,31 @@ $("#contraer-menu").click(function(){
 $(".e-perfil").click(function(){
   $('.active').removeClass('active');
   $('#a-usuarios').addClass('active');
-  $('section').attr({hidden: "hidden"});
-  $('#ed-perfil').removeAttr('hidden');
+  $('.mostrar').addClass('oculto');
+  $('.mostrar').removeClass('mostrar');
+  $('#ed-perfil').removeClass('oculto');
+  $('#ed-perfil').addClass('mostrar');
 });
-
+$("#a-usuarios").click(function(){
+  $('.active').removeClass('active');
+  $('#a-usuarios').addClass('active');
+  $('#usuarios').removeClass('oculto');
+  $('#usuarios').addClass('mostrar');
+});
+$("#btn-addUsuario").click(function(){
+  $('#add-user').removeClass('oculto');
+  $('#add-user').addClass('mostrar');
+});
 $("#btn-newContraseña").click(function(){
   $('#newPassword').removeAttr('disabled');
+});
+
+$("#btn-verContrasenia").click(function(){
+  if("password" == $('#inputPassword').attr("type")){
+    $('#inputPassword').removeAttr('type');
+    $('#inputPassword').attr({type:"text"});
+  }else{
+    $('#inputPassword').removeAttr('type');
+    $('#inputPassword').attr({type:"password"});
+  }
 });

@@ -240,8 +240,7 @@ section{
 .form-perfil{
  padding: 5%;
 }
-.form-control{
-  margin: 0px;
+form .form-control{
   margin-bottom:  20px;
 }
 .btn-warning{
@@ -251,4 +250,10 @@ section{
   width: 60%;
   margin-bottom: 30px;
   margin-top: 30px;
+}
+.oculto{
+  display: none;
+}
+.mostrar{
+  display: block;
 }
