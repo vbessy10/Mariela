@@ -1,446 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Mariela</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="img/icono-AA.ico">
-  <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/home.css">
+<html>
+<head>    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mariela</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/icono-AA.ico">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/landing-page.css">  
 </head>
 <body>
-  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand py-2 mr-2" href="#"><img src="img/am.png" alt="Santiago" class="img-logo"></a>
-    <a class="navbar-brand mr-2" href="#">Ver Sitio</a>
-    <div class="dropdown">
-      <a class="navbar-brand dropdown-toggle mr-2" href="#" id="aniadir" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Añadir</a>
-        <div class="dropdown-menu dropdown-menu-left " aria-labelledby="aniadir">
-          <a class="dropdown-item" id="nav-entrada" href="#entrada">Entrada</a>
-          <a class="dropdown-item" id="nav-pagina" href="#paginas">Página</a>
-          <a class="dropdown-item" id="nav-usuario" href="#usuarios">Usuario</a>
-        </div>
-      </a>
-    </div>
-    <div class="ml-auto">
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#info-perfil" data-toggle="collapse">Hola, Usuario <img src="img/user.jpg" alt="Usuario" class="rounded-circle img-user"></a>
-        </li>
-      </ul>
-      <div id="info-perfil" class="collapse">
-        <div class="row">
-          <div class="col-5">
-            <img src="img/user.jpg" alt="" class="perfil rounded-circle">
+  <div id="div-body">
+    <nav class="navbar navbar-expand-md site-header fixed-top">
+      <div class="container d-flex justify-content-between">
+          <a class="py-2" href="#">
+              <img src="img/am.png" alt="Santiago" class="img-logo">
+          </a>
+          <button class="navbar-toggler collapsed" id="btn-navbar-toggler" title="Menú" btype="button" data-toggle="collapse" data-target="#navbarsExample" aria-controls="navbarsExample" aria-expanded="false" aria-label="Toggle navigation">
+              <span>
+                  <svg class="svg" id="svg-nav">
+                      <line x1="5" y1="10" x2="35" y2="10"/>
+                      <line x1="5" y1="20" x2="35" y2="20"/>
+                      <line x1="5" y1="30" x2="35" y2="30"/>
+                      Sorry, your browser does not support inline SVG.
+                  </svg>
+              </span>
+          </button>
+          <div class="navbar-collapse collapse" id="navbarsExample">
+              <div class="ml-auto">
+                  <button type="button" class="btn boton"><a class="py-3 d-md-inline-block" href="login.html">INICIAR SESION</a></button>
+                  <button type="button" class="btn boton"><a class="py-3 d-md-inline-block" href="registro.html">REGISTRAR</a></button>
+              </div>
           </div>
-          <div class="col-7">
-            <ul>
-              <li><a href="#ed-perfil" class="e-perfil">Usuario</a></li>
-              <li><a href="#ed-perfil"class="e-perfil">Editar Perfil</a></li>
-              <li><a href="#">Cerrar Sesión</a></li>
-            </ul>
+      </div>
+    </nav>
+    
+    <div class="overflow-hidden d-flex p-3 p-md-5 text-center cover bg-light">
+      <div class="col-md-5 p-lg-5 mx-auto my-5 centrar">  
+        <div>
+            <img id="imgLogo" src="img/logoMA.png" alt="mariela">
+        </div>   
+      </div>
+    </div>
+    
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+      <div class="bg-white mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="my-3 py-3">
+          <p class="lead">Bonitos diseños, potentes características, y la libertad de crear lo que tú quieras.</p>
+        </div>
+        <div style="width: 80%; border-radius: 21px 21px 0 0; margin: auto;">
+          <div>
+            <img src="img/web.png" id="img-ejemplo">
           </div>
         </div>
       </div>
     </div>
-  </nav>
-          
-  <div class="container">
-    <div class="row">
-      <nav class="col-md-2 d-none d-md-block bg-dark sidebar" id="nav-lateral">
-        <div class="sidebar-sticky">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link active" href="#escritorio" id="a-escritorio">
-                <span><i class="fas fa-tachometer-alt"></i></span>
-                Escritorio <span class="sr-only">(current)</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#entrada" id="a-entradas">
-                <span><i class="fas fa-tags"></i></span>
-                Entradas
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#medios" id="a-medios">
-                <span><i class="fas fa-photo-video"></i></span>
-                Medios
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#paginas" id="a-paginas">
-                <span><i class="fas fa-layer-group"></i></span>
-                Páginas
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#usuarios" id="a-usuarios">
-                <span><i class="fas fa-users"></i></span>
-                Usuarios
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" id="contraer-menu">
-                <span><i class="fas fa-angle-double-left"></i></span>
-                Cerrar Menu
-                </a>
-            </li>
+  
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+      <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <!--div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"-->
+        <div class="my-3 p-3">
+          <!--h2 class="display-5">Another headline</h2>
+          <p class="lead">And an even wittier subheading.</p-->
+        </div>
+        <div style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+        <!--div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div-->
+      </div>
+      <!--div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5">Another headline</h2>
+          <p class="lead">And an even wittier subheading.</p>
+        </div>
+        <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+          <div class="my-3 py-3">
+            <h2 class="display-5">Another headline</h2>
+            <p class="lead">And an even wittier subheading.</p>
+          </div>
+          <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+        </div-->
+    </div>
+    
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+      <div class="bg-yellow mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="mx-auto" style="width: 80%; height: 450px; border-radius: 21px 21px;">
+          <div>
+            <h1 class="display-6">Comienza ahora.</h1>
+            <p class="leadW">Si puedes imaginarlo, puedes crearlo.</p>
+            <button type="button" class="btn btn-primary btn-lg conseguir"><a href="#" download>Descargar</a></button>
+            <button type="button" class="btn btn-primary btn-lg conseguir"><a href="https://github.com/vbessy10/Mariela" target="_blank">Obtenlo en Github</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3">
+      <div class="bg-light pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" id="div-imagen" style="background-image: url('img/plantillas.jpg')">
+      </div>
+    </div>
+  
+  </div><!-- Fin div body -->
+
+  <div id="div-footer">
+    <footer class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md">
+          <a class="py-2" href="#">
+              <img src="img/bl.png" alt="Santiago" class="img-logo">
+          </a>
+          <!--small class="d-block mb-3 text-muted">&copy; 2017-{{ site.time | date: "%Y" }}</small-->
+        </div>
+        <div class="col-6 col-md">
+          <h5>Features</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Cool stuff</a></li>
+            <li><a class="text-muted" href="#">Random feature</a></li>
+            <li><a class="text-muted" href="#">Team feature</a></li>
+            <li><a class="text-muted" href="#">Stuff for developers</a></li>
+            <li><a class="text-muted" href="#">Another one</a></li>
+            <li><a class="text-muted" href="#">Last time</a></li>
           </ul>
         </div>
-      </nav>
-          
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Resource</a></li>
+            <li><a class="text-muted" href="#">Resource name</a></li>
+            <li><a class="text-muted" href="#">Another resource</a></li>
+            <li><a class="text-muted" href="#">Final resource</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Business</a></li>
+            <li><a class="text-muted" href="#">Education</a></li>
+            <li><a class="text-muted" href="#">Government</a></li>
+            <li><a class="text-muted" href="#">Gaming</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>About</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Team</a></li>
+            <li><a class="text-muted" href="#">Locations</a></li>
+            <li><a class="text-muted" href="#">Privacy</a></li>
+            <li><a class="text-muted" href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div><!-- fin pie de pagina -->
 
-        <section id="escritorio" class="mostrar">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Escritorio</h1>
-          </div> 
-          <div class="container-fluid">
-            <div class="row escritorio-body">
-              <div class="col-11 row">
-                <div class="col-12">
-                  <h5><strong>¡Bienvenido!</strong></h5>
-                  <p>Hemos recopilado algunos enlaces para que puedas comenzar:</p>
-                </div>
-                <div class="col-12 col-md-6">
-                  <label><strong>Comienza</strong></label>
-                  <br>
-                  <button type="button" class="btn btn-sm btn-yellow btn-outline-secondary">Comenzar o personaliza tu sitio</i></button>
-                </div>
-                <div class="col-12 col-md-6 div-sig-pasos">
-                    <div class="col-12"><label><strong>Siguientes pasos</strong></label></div>
-                    <div class="col-12"><a href="#entrada"><span><i class="fas fa-tags"></i></span> Escribe tu primera entrada</a></div>
-                    <div class="col-12"><a href="#paginas"><span><i class="fas fa-layer-group"></i></span>Añade una página</a></div>
-                    <div class="col-12"><a href="#"><span><i class="fas fa-desktop"></i></span> Ver tú sitio</a></div>
-                </div>
-              </div>
-              <div></div>
-              <div></div>
-            </div>
-
-            <div class="row">
-              <div class="col-6 row escritorio-body">
-                <div class="col-12">
-                  <h5><strong>De un vistazo</strong></h5>
-                  <hr>
-                </div>
-                <div class="col-12">
-                  <div class="col-12"><a href="#entrada"><span class="cantidad"><i class="fas fa-tags"></i>0 Entrada</span></a></div>
-                  <div class="col-12"><a href="#paginas"><span class="cantidad"><i class="fas fa-layer-group"></i>0 Página</span></a></div>
-                </div>
-              </div>
-
-              <div class="col-6 row escritorio-body">
-                <div class="col-12">
-                  <h5><strong>Actividad</strong></h5>
-                  <hr>
-                </div>
-                <div class="col-12 row">
-                  <div class="col-12"><label>Publicaciones recientes:</label></div>
-                  <div class="col-6"><a href="#entrada"><span class="fecha">22 Julio 2019</span></a></div>
-                  <div class="col-6"><a href="#paginas"><span class="entrada">¡Hola mundo!</span></a></div>
-                </div>
-              </div>
-            </div>
-            
-          </div>   
-        </section>
-
-        <section id="entrada" class="oculto">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Entradas</h1>
-            <button type="button" class="btn btn-outline-warning mr-auto">Agregar entrada</button>
-          </div>   
-          
-          <div class="container">
-            <div class="row">
-              <div class="tipo">
-                <a href="#">Todos (<span class="cantidad">0</span>)</a>
-                <label>|</label>
-                <a href="#">Público (<span class="cantidad">0</span>)</a>
-                <label>|</label>
-                <a href="#">Privado (<span class="cantidad">0</span>)</a>
-              </div>
-              <div class="ml-auto btn-toolbar mb-2 mb-md-0">
-                <div class="btn-group mr-2">
-                  <input type="text" class="form-control">
-                </div>
-                <button type="button" title="Buscar Entrada" class="btn btn-sm btn-yellow btn-outline-secondary"><i class="fas fa-search"></i></button>
-              </div>
-              <div class="div-entradas col-11">
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th class="checkbox"><input type="checkbox"></th>
-                      <th>Título</th>
-                      <th>Tipo</th>
-                      <th>Autor</th>
-                      <th>Categorías</th>
-                      <th>Fecha</th>
-                    </tr>
-                  </thead>
-                  <tbody id="tbl-entradas">
-                    <tr>
-                      <td class="checkbox"><input type="checkbox"></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="medios" class="oculto">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Biblioteca de medios</h1>
-            <button type="button" class="btn btn-outline-warning mr-auto">Agregar nuevo</button>
-          </div> 
-          <div class="container">
-            <div class="row">
-              <div class="col-4">
-                <select name="tipo-medio" id="" class="form-control">
-                  <option value="">Todos los medios</option>
-                  <option value="">Imágenes</option>
-                  <option value="">Audios</option>
-                  <option value="">Videos</option>
-                  <option value="">Otros</option>
-                </select>
-              </div>
-              <div class="ml-auto btn-toolbar mb-2 mb-md-0">
-                <div class="btn-group mr-2">
-                  <input type="text" class="form-control">
-                </div>
-                <button type="button" title="Buscar Medio" class="btn btn-sm btn-yellow btn-outline-secondary"><i class="fas fa-search"></i></button>
-              </div>
-              <div class="div-medios col-12">
-                <hr>
-                <div class="container">
-                  <div class="row">
-                    
-                    <div class="card-medio card col-lg-2 col-md-3 col-6">
-                        <div class="card-body">
-                            <img class="card-img-top" src="img/pdf.png" alt="Card image">
-                        </div>
-                    </div>
-
-                  </div>
-                </div>  
-              </div>
-            </div>
-          </div>  
-          </section>
-
-          <section id="paginas" class="oculto">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-              <h1 class="h2">Páginas</h1>
-              <button type="button" class="btn btn-outline-warning mr-auto">Agregar nueva</button>
-            </div>      
-            <div class="container">
-              <div class="row">
-                <div class="tipo">
-                  <a href="#">Todos (<span class="cantidad">0</span>)</a>
-                  <label>|</label>
-                  <a href="#">Publicada (<span class="cantidad">0</span>)</a>
-                  <label>|</label>
-                  <a href="#">Borrador (<span class="cantidad">0</span>)</a>
-                </div>
-                <div class="ml-auto btn-toolbar mb-2 mb-md-0">
-                  <div class="btn-group mr-2">
-                    <input type="text" class="form-control">
-                  </div>
-                  <button type="button" title="Buscar Entrada" class="btn btn-sm btn-yellow btn-outline-secondary"><i class="fas fa-search"></i></button>
-                </div>
-                <div class="div-entradas col-11">
-                  <table class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th class="checkbox"><input type="checkbox"></th>
-                        <th>Título</th>
-                        <th>Tipo</th>
-                        <th>Autor</th>
-                        <th>Fecha</th>
-                      </tr>
-                    </thead>
-                    <tbody id="tbl-entradas">
-                      <tr>
-                        <td class="checkbox"><input type="checkbox"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section id="usuarios" class="oculto"> 
-              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Usuarios</h1>
-                <button id="btn-addUsuario" type="button" class="btn btn-outline-warning mr-auto">Agregar nuevo</button>
-              </div>      
-              <div class="container">
-                <div class="row">
-                  <div class="tipo">
-                    <a href="#">Todos (<span class="cantidad">0</span>)</a>
-                    <label>|</label>
-                    <a href="#">Administrador (<span class="cantidad">0</span>)</a>
-                  </div>
-                  <div class="ml-auto btn-toolbar mb-2 mb-md-0">
-                    <div class="btn-group mr-2">
-                      <input type="text" class="form-control">
-                    </div>
-                    <button type="button" title="Buscar Entrada" class="btn btn-sm btn-yellow btn-outline-secondary"><i class="fas fa-search"></i></button>
-                  </div>
-                  <div class="div-entradas col-11">
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th class="checkbox"><input type="checkbox"></th>
-                          <th>Nombre de Usuario</th>
-                          <th>Nombre</th>
-                          <th>Correo</th>
-                          <th>Perfil</th>
-                          <th>Entradas</th>
-                        </tr>
-                      </thead>
-                      <tbody id="tbl-entradas">
-                        <tr>
-                          <td class="checkbox"><input type="checkbox"></td>
-                          <td><a href="#ed-perfil" class="td-a e-perfil">Usuario</a></td>
-                          <td>José Cruz</td>
-                          <td>juan_cruz@gmail.com</td>
-                          <td>Administrador</td>
-                          <td>0</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-          </section>
-
-          <section id="ed-perfil" class="oculto"> 
-              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Perfil</h1>
-              </div>      
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-4 div-perfil">
-                    <div class="col-12">
-                      <img src="img/user.jpg" alt="usuario" class="rounded-circle img-fluid">
-                    </div>
-                    <div class="ed-foto col-12"><button type="button" title="Editar Foto" class="btn btn-sm btn-yellow btn-outline-secondary" ml-auto><i class="fas fa-user-edit"></i></button></div>
-                    <div class="col-12"><h1 class="user"> Usuario</h1></div>
-                  </div>
-                  <div class="col-md-8">
-                    <form class="form-perfil">
-                        <div class="row">
-                          <div class="col-md-6"><input type="text" id="acNombre" class="form-control" placeholder="Nombre" autofocus></div>
-                          <div class="col-md-6"><input type="text" id="acApellido" class="form-control" placeholder="Apellido"></div>
-                          <div class="col-md-6"><input type="email" id="acEmail" class="form-control" placeholder="Correo"></div>
-                          <div class="col-md-6">
-                            <select name="tipo" id="acTipo" class="form-control">
-                              <option value="">Tipo de usuario</option>
-                              <option value="">Administrador</option>
-                              <option value="">Registrado</option>
-                            </select>
-                          </div>
-                          <div class="col-md-6 input-group mb-4">
-                            <input type="password" id="acPassword" class="form-control" placeholder="Contraseña">
-                            <div class="input-group-append">
-                                <button type="button" class="input-group-text" title="Editar" id="btn-newContraseña"><i class="far fa-edit"></i></button>
-                            </div>
-                          </div>
-                          <div class="col-md-6"><input type="password" id="newPassword" class="form-control" placeholder="Nueva contraseña" disabled></div>
-                          <div class="col-md-6 row">
-                            <label class="col-12">Genero</label>
-                            <label class="col-6"><input name="genero" type="radio">Femenino</label>
-                            <label class="col-6"><input name="genero" type="radio">Masculino</label>
-                          </div>
-                          <div class="col-md-6">
-                            <label>Fecha de nacimiento</label>
-                            <input type="date" name="nacimiento" id="acNacimiento" class="form-control">
-                          </div>
-                          <div class="col-12"><button class="btn btn-warning btn-block form-control" id="btn-actualizar" type="submit">Actualizar</button></div>
-                          <!--button class="btn btn-success " id="btn-registro" type="submit">Registrar</button-->
-                        </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-          </section>
-
-          <section id="add-user" class="oculto"> 
-              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Nuevo usuario</h1>
-              </div>      
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-4 div-perfil">
-                    <div class="col-12">
-                      <img src="img/user.jpg" alt="usuario" class="rounded-circle img-fluid">
-                    </div>
-                    <div class="ed-foto col-12"><button type="button" title="Cargar Foto" class="btn btn-sm btn-yellow btn-outline-secondary" ml-auto><i class="fas fa-user-edit"></i></button></div>
-                    <div class="col-12"><h1 class="user"> Usuario</h1></div>
-                  </div>
-                  <div class="col-md-8">
-                    <form class="form-perfil">
-                        <div class="row">
-                          <div class="col-md-6"><input type="text" id="nombre" class="form-control" placeholder="Nombre" autofocus></div>
-                          <div class="col-md-6"><input type="text" id="apellido" class="form-control" placeholder="Apellido"></div>
-                          <div class="col-md-6"><input type="text" id="inUsuario" class="form-control" placeholder="Usuario"></div>
-                          <div class="col-md-6"><input type="email" id="inputEmail" class="form-control" placeholder="Correo"></div>
-                          <div class="col-md-6">
-                            <select name="tipo" id="tipo" class="form-control">
-                              <option value="">Tipo de usuario</option>
-                              <option value="">Administrador</option>
-                              <option value="">Registrado</option>
-                            </select>
-                          </div>
-                          <div class="col-md-6 input-group mb-4">
-                            <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña">
-                            <div class="input-group-append">
-                                <button type="button" class="input-group-text" title="Editar" id="btn-verContrasenia"><i class="fas fa-low-vision"></i></button>
-                            </div>
-                          </div>
-                          <div class="col-md-6 row">
-                            <label class="col-12">Genero</label>
-                            <label class="col-6"><input name="genero" type="radio">Femenino</label>
-                            <label class="col-6"><input name="genero" type="radio">Masculino</label>
-                          </div>
-                          <div class="col-md-6">
-                            <label>Fecha de nacimiento</label>
-                            <input type="date" name="nacimiento" id="nacimiento" class="form-control">
-                          </div>
-                          <div class="col-12"><button class="btn btn-warning btn-block form-control" id="btn-guardar" type="submit">Guardar</button></div>
-                          <!--button class="btn btn-success " id="btn-registro" type="submit">Registrar</button-->
-                        </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-          </section>
-
-        </main>
-    </div>
-  </div> 
-     
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-    <script src="js/dashboard.js"></script>
-    
-  </body>
+</body>
 </html>
+

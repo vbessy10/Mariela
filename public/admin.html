@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Mariela</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="img/icono-AA.ico">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand py-2 mr-2" href="#"><img src="img/am.png" alt="Santiago" class="img-logo"></a>
+    <a class="navbar-brand mr-2" href="#">Ver Sitio</a>
+    <div class="dropdown">
+      <a class="navbar-brand dropdown-toggle mr-2" href="#" id="aniadir" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Añadir</a>
+      <div class="dropdown-content" aria-labelledby="aniadir">
+        <a class="dropdown-item" id="nav-entrada" href="#entrada">Entrada</a>
+        <a class="dropdown-item" id="nav-pagina" href="#paginas">Página</a>
+        <a class="dropdown-item" id="nav-usuario" href="#usuarios">Usuario</a>
+      </div>
+    </div>
+    <div class="ml-auto">
+      <div class="dropdown">
+        <ul class="navbar-nav px-3">
+          <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#" id="drop-info-perfil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hola, Usuario <img src="img/user.jpg" alt="Usuario" class="rounded-circle img-user"></a>
+          </li>
+        </ul>
+        <div id="info-perfil" class="dropdown-content" aria-labelledby="drop-info-perfil">
+          <div class="row">
+            <div class="col-5">
+              <img src="img/user.jpg" alt="" class="perfil rounded-circle">
+            </div>
+            <div class="col-7">
+              <ul>
+                <li><a href="#ed-perfil" class="e-perfil">Usuario</a></li>
+                <li><a href="#ed-perfil"class="e-perfil">Editar Perfil</a></li>
+                <li><a href="#">Cerrar Sesión</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div><!-- Fin dropdown -->
+    </div>
+  </nav>
+          
+  <div class="container">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block bg-dark sidebar" id="nav-lateral">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="#escritorio" id="a-escritorio">
+                <span><i class="fas fa-tachometer-alt"></i></span>
+                Escritorio <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#entrada" id="a-entradas">
+                <span><i class="fas fa-tags"></i></span>
+                Entradas
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#medios" id="a-medios">
+                <span><i class="fas fa-photo-video"></i></span>
+                Medios
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#paginas" id="a-paginas">
+                <span><i class="fas fa-layer-group"></i></span>
+                Páginas
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#usuarios" id="a-usuarios">
+                <span><i class="fas fa-users"></i></span>
+                Usuarios
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="contraer-menu">
+                <span><i class="fas fa-angle-double-left"></i></span>
+                Cerrar Sesión
+                </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+          
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+
+        <section id="escritorio" class="mostrar">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Escritorio</h1>
+          </div> 
+          <div class="container-fluid">
+            <div class="row escritorio-body">
+              <div class="col-11 row">
+                <div class="col-12">
+                  <h5><strong>¡Bienvenido!</strong></h5>
+                  <p>Hemos recopilado algunos enlaces para que puedas comenzar:</p>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label><strong>Comienza</strong></label>
+                  <br>
+                  <button type="button" class="btn btn-sm btn-yellow btn-outline-secondary">Comenzar o personaliza tu sitio</i></button>
+                </div>
+                <div class="col-12 col-md-6 div-sig-pasos">
+                    <div class="col-12"><label><strong>Siguientes pasos</strong></label></div>
+                    <div class="col-12"><a href="#entrada"><span><i class="fas fa-tags"></i></span> Escribe tu primera entrada</a></div>
+                    <div class="col-12"><a href="#paginas"><span><i class="fas fa-layer-group"></i></span>Añade una página</a></div>
+                    <div class="col-12"><a href="#"><span><i class="fas fa-desktop"></i></span> Ver tú sitio</a></div>
+                </div>
+              </div>
+              <div></div>
+              <div></div>
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="row escritorio-body">
+                  <div class="col-12">
+                    <h5><strong>De un vistazo</strong></h5>
+                    <hr>
+                  </div>
+                  <div class="col-12">
+                    <div class="col-12"><a href="#entrada"><span class="cantidad"><i class="fas fa-tags"></i>0 Entrada</span></a></div>
+                    <div class="col-12"><a href="#paginas"><span class="cantidad"><i class="fas fa-layer-group"></i>0 Página</span></a></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 ">
+                <div class="row escritorio-body">
+                  <div class="col-12">
+                    <h5><strong>Actividad</strong></h5>
+                    <hr>
+                  </div>
+                  <div class="col-12 row">
+                    <div class="col-12"><label>Publicaciones recientes:</label></div>
+                    <div class="col-6"><a href="#entrada"><span class="fecha">22 Julio 2019</span></a></div>
+                    <div class="col-6"><a href="#paginas"><span class="entrada">¡Hola mundo!</span></a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>   
+        </section>
+
+        <section id="entrada" class="oculto">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Entradas</h1>
+            <button type="button" id="agregar-entrada" class="btn btn-outline-warning mr-auto">Agregar entrada</button>
+          </div>   
+          
+          <div class="container">
+            <div class="row">
+              <div class="tipo">
+                <a href="#">Todos (<span class="cantidad">0</span>)</a>
+                <label>|</label>
+                <a href="#">Público (<span class="cantidad">0</span>)</a>
+                <label>|</label>
+                <a href="#">Privado (<span class="cantidad">0</span>)</a>
+              </div>
+              <div class="ml-auto btn-toolbar mb-2 mb-md-0">
+                <div class="btn-group mr-2">
+                  <input type="text" class="form-control">
+                </div>
+                <button type="button" title="Buscar Entrada" class="btn btn-sm btn-yellow btn-outline-secondary"><i class="fas fa-search"></i></button>
+              </div>
+              <div class="div-entradas col-11">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th class="checkbox"><input type="checkbox"></th>
+                      <th>Título</th>
+                      <th>Autor</th>
+                      <th>Categorías</th>
+                      <th>Fecha</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="tbl-entradas">
+                    <tr>
+                      <td class="checkbox"><input type="checkbox"></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="medios" class="oculto">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Biblioteca de medios</h1>
+            <button type="button" class="btn btn-outline-warning mr-auto">Agregar nuevo</button>
+          </div> 
+          <div class="container">
+            <div class="row">
+              <div class="col-4">
+                <select name="tipo-medio" id="" class="form-control">
+                  <option value="">Todos los medios</option>
+                  <option value="">Imágenes</option>
+                  <option value="">Audios</option>
+                  <option value="">Videos</option>
+                  <option value="">Otros</option>
+                </select>
+              </div>
+              <div class="ml-auto btn-toolbar mb-2 mb-md-0">
+                <div class="btn-group mr-2">
+                  <input type="text" class="form-control">
+                </div>
+                <button type="button" title="Buscar Medio" class="btn btn-sm btn-yellow btn-outline-secondary"><i class="fas fa-search"></i></button>
+              </div>
+              <div class="div-medios col-12">
+                <hr>
+                <div class="container">
+                  <div class="row">
+                    
+                    <div class="card-medio card col-lg-2 col-md-3 col-6">
+                        <div class="card-body">
+                            <img class="card-img-top" src="img/pdf.png" alt="Card image">
+                        </div>
+                    </div>
+
+                  </div>
+                </div>  
+              </div>
+            </div>
+          </div>  
+          </section>
+
+          <section id="paginas" class="oculto">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              <h1 class="h2">Páginas</h1>
+              <button type="button" class="btn btn-outline-warning mr-auto">Agregar nueva</button>
+            </div>      
+            <div class="container">
+              <div class="row">
+                <div class="tipo">
+                  <a href="#">Todos (<span class="cantidad">0</span>)</a>
+                  <label>|</label>
+                  <a href="#">Publicada (<span class="cantidad">0</span>)</a>
+                  <label>|</label>
+                  <a href="#">Borrador (<span class="cantidad">0</span>)</a>
+                </div>
+                <div class="ml-auto btn-toolbar mb-2 mb-md-0">
+                  <div class="btn-group mr-2">
+                    <input type="text" class="form-control">
+                  </div>
+                  <button type="button" title="Buscar Entrada" class="btn btn-sm btn-yellow btn-outline-secondary"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="div-entradas col-11">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th class="checkbox"><input type="checkbox"></th>
+                        <th>Título</th>
+                        <th>Tipo</th>
+                        <th>Autor</th>
+                        <th>Fecha</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbl-entradas">
+                      <tr>
+                        <td class="checkbox"><input type="checkbox"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="usuarios" class="oculto"> 
+              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Usuarios</h1>
+                <button id="btn-addUsuario" type="button" class="btn btn-outline-warning mr-auto">Agregar nuevo</button>
+              </div>      
+              <div class="container">
+                <div class="row">
+                  <div class="tipo">
+                    <a href="#">Todos (<span class="cantidad">0</span>)</a>
+                    <label>|</label>
+                    <a href="#">Administrador (<span class="cantidad">0</span>)</a>
+                  </div>
+                  <div class="ml-auto btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
+                      <input type="text" class="form-control">
+                    </div>
+                    <button type="button" title="Buscar Entrada" class="btn btn-sm btn-yellow btn-outline-secondary"><i class="fas fa-search"></i></button>
+                  </div>
+                  <div class="div-entradas col-11">
+                    <table class="table table-striped" >
+                      <thead>
+                        <tr>
+                          <th class="checkbox"><input type="checkbox"></th>
+                          <th>Nombre de Usuario</th>
+                          <th>Nombre</th>
+                          <th>Correo</th>
+                          <th>Perfil</th>
+                          <th>Entradas</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbl-usuarios">
+                       
+                      </tbody>
+                    </table>
+                    <div id="div-id"></div>
+                  </div>
+                </div>
+              </div>
+          </section>
+
+          <section id="ed-perfil" class="oculto"> 
+              
+          </section>
+
+          <section id="add-user" class="oculto"> 
+              
+          </section>
+
+          <section id="add-post" class="oculto"> 
+              
+            </section>
+
+        </main>
+    </div>
+  </div> 
+  
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="js/admin.js"></script>
+    
+  </body>
+</html>

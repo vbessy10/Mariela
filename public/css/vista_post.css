@@ -1,0 +1,18 @@
+hr{
+    margin-top: 0rem;
+    margin-bottom: 1.8rem;
+    border-top: 3px solid #01233fcf;
+}
+
+.container-fluid{
+    max-width: 1140px;
+    margin-top: 4rem;
+}
+.container{
+    max-width: 900px;
+    padding-left: 30px;
+}
+#vpTitulo{
+    font-size: 3.2rem;
+    color: #01233f;
+}

@@ -1,0 +1,104 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Añadir nueva entrada</h1>
+</div> 
+<link rel="stylesheet" href="../css/post.css">
+<main>
+    <div class="container-fluid">
+        <form action="" id="form-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <input type="text" id="_id" hidden>
+                        <label><h6>Título de la entrada</h6></label>
+                        <input class="form-control" type="text" id="titulo" name="titulo">
+                    </div>
+                    <div class="col-12">
+                        <label><h6>Categoría</h6></label>
+                        <div class="row">
+                            <div class="col-11">
+                                <select class="form-control" name="categoria" id="categoria">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                            <div class="col-1">
+                                <button type="button" id="btn-add_categoria" data-toggle="modal" data-target="#modal-categorias" title="Agregar Categoria" class="btn btn-sm btn-yellow btn-outline-secondary"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-12 row">
+                        <label class="col-12"><h6>Comentarios</h6></label>
+                        <label class="col-6"><input name="v-comentario" type="radio" value="1">Permitir</label>
+                        <label class="col-6"><input name="v-comentario" type="radio" value="0">No perminir</label>
+                    </div> 
+                    <div class="col-10" id="div">
+                            <label>Nota:</label>
+                            <div id="div-nota">
+                                <i class="fa fa-arrows-alt"></i>
+                                <p id="txt-pequeno">Permite expandir el área del Post</p>
+                            </div>
+                        </div> 
+                </div>
+            </div>
+            <hr>
+            <div class="container-fluid">
+                <textarea name="ed-post" id="ed-post" rows="100%" cols="100%">
+                    Escribe tu post aqui...
+                </textarea>
+            </div>
+            <div class="alert alert-info respuesta" id="repuesta-post">
+                <strong>Post agregado exitosamente!</strong>
+            </div>
+            <div class="container">
+                <button class="btn btn-lg btn-primary" type="button" id="btn-guardarPost" name="btn-guardarPost"> Guardar Post</button>
+                <button class="btn btn-lg btn-primary" type="button" id="btn-verPost" name="btn-verPost">Ver post</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<!-- Modal -->
+<div id="modal-categorias" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Categorías</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form action="" id="form-categoria">
+                <div>
+                    <label><h6>Categoría:</h6></label>
+                    <input type="text" id="inputCategoria" name="inputCategoria" class="form-control" autofocus>
+                </div>
+                <div>
+                    <label><h6>Descripción:</h6></label>
+                    <textarea class="form-control" name="descripcion" id="descripcion"></textarea>
+                </div>
+                <div>
+                    <div class="alert alert-info respuesta" id="repuesta-categoria">
+                        <strong>¡Categoría agregado exitosamente!</strong>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" id="btn-guargarCat" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+</div>
+<!-- Final Modal -->
+
+<script src="ckeditor/ckeditor.js"></script>
+<script>
+    // Replace the <textarea id="ed-post"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace( 'ed-post' );
+</script>
+
+<script src="js/post.js"></script>
+<script src="js/admin.js"></script>
+

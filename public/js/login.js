@@ -6,12 +6,12 @@ var campos = [
 $(document).ready(function(){
     $("input").keypress(function(e){
         if(e.which == 13)
-            validarCampos();
+            IniciarSesion();
     });
 });
 
 $('#btn-login').click(function(){
-    validarCampos();
+    IniciarSesion();
 });
 
 function validarCampos(){
@@ -21,6 +21,13 @@ function validarCampos(){
     for (let i = 0; i<campos.length; i++)
         if (!campos[i].valido)
             return;
+
+    let usuario = {
+        correo: document.getElementById('inputEmail').value,
+        contrasenia: document.getElementById('inputPassword').value
+    }
+
+    return usuario;
 }
 
 function validarCampoVacio(id){
@@ -42,9 +49,43 @@ function validarCorreo(correo){
 function marcarInput(campo, valor){
     if(valor){
         $('#'+campo).removeClass('is-invalid');
-        $('#'+campo).addClass('is-valid');
     }else{
-        $('#'+campo).removeClass('is-valid');
         $('#'+campo).addClass('is-invalid');
     }
+}
+
+function IniciarSesion(){
+    
+    let usuario = validarCampos();
+    
+    if (usuario==null || usuario == undefined)
+        return;
+    
+    $.ajax({
+        url:`usuarios/correo/${$('#inputEmail').val()}`,
+        method:'GET',
+        dataType:'json',
+        success:(res)=>{ 
+            /*
+            for (let i = 0; i < res.length; i++) {
+                console.log(res[i]);  
+            }
+            */
+            if (res.contrasenia == $('#inputPassword').val()){
+                location.href='../admin.html';
+            }else{
+                $('#inputEmail').addClass('is-invalid');
+                $('#inputPassword').addClass('is-invalid');
+                $('.respuesta').fadeIn(100);
+            }
+                /*
+                setTimeout (()=>{location.href='../admin.html'}, 1000);}*/
+        },
+        error:(error)=>{
+            $('#inputEmail').addClass('is-invalid');
+            $('#inputPassword').addClass('is-invalid');
+            $('.respuesta').fadeIn(100);
+            console.error(error);
+        }
+    });
 }

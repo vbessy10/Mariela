@@ -1,6 +1,6 @@
 var campos = [
-    {id:'inputEmail', valido:false},
-    {id:'inputPassword', valido:false},
+    {id:'correo', valido:false},
+    {id:'contrasenia', valido:false},
     {id:'nombre', valido:false},
     {id:'apellido', valido:false},
     {id:'usuario', valido:false}
@@ -9,13 +9,10 @@ var campos = [
 $(document).ready(function(){
     $("input").keypress(function(e){
         if(e.which == 13)
-            validarCampos();
+            registrarUsuario();
     });
 });
 
-$('#btn-registro').click(function(){
-    validarCampos();
-});
 
 function validarCampos(){
     for (let i = 0; i<campos.length; i++)
@@ -24,6 +21,16 @@ function validarCampos(){
     for (let i = 0; i<campos.length; i++)
         if (!campos[i].valido)
             return;
+    
+    let persona = {
+        nombre: document.getElementById('nombre').value,
+        apellido: document.getElementById('apellido').value,
+        usuario: document.getElementById('usuario').value, 
+        correo: document.getElementById('correo').value,
+        contrasenia: document.getElementById('contrasenia').value
+    }
+
+    return persona;
 }
 
 function validarCampoVacio(id){
@@ -54,4 +61,36 @@ function marcarInput(campo, valor){
         $('#'+campo).removeClass('is-valid');
         $('#'+campo).addClass('is-invalid');
     }
+}
+
+
+$('#btn-registro').click(function(){
+    registrarUsuario();
+});
+
+
+function registrarUsuario(){
+    let persona = validarCampos();
+    
+    if (persona==null || persona == undefined)
+        return;
+    
+    let parametros = $('#form-registro').serialize();
+     
+    $.ajax({
+        url:'usuarios/',
+        method:'POST',
+        data:parametros,
+        dataType:'json',
+        success:(res)=>{
+            console.log(res);
+            if (res._id != undefined){
+                $('.respuesta').fadeIn(100);
+                setTimeout (()=>{location.href='../login.html'}, 1000);}
+        },
+        error:(error)=>{
+            console.error(error);
+        }
+    });
+    
 }

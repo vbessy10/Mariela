@@ -1,0 +1,46 @@
+.btn-secondary{
+    color: #ffffff;
+    background-color: #01233f !important;
+    border-color: #01233f;
+}
+
+.btn-primary{
+    color: #ffffff;
+    background-color: #f7c500 !important;
+    border-color: #f7c500;
+}
+
+.form-control{
+    margin-bottom: 15px;
+}
+.modal-body{
+    padding: 1rem 1.7rem;
+}
+#btn-guardarPost, #btn-verPost{
+    margin: auto;
+    margin-top: 3rem;
+    min-width: 30%;
+    margin-left: auto;
+    margin-right: 0px;
+    display: block;
+}
+#btn-verPost{
+    display: none;
+}
+input[type='radio']{
+    margin-right: 10px;    
+}
+#txt-pequeno{
+    font-size: small;
+    margin-left: 10px;
+}
+#div-nota{
+    display: -webkit-box;
+}
+#div{
+    border: solid 1px #d3c9c9;
+    padding: 5px 20px;
+    margin: auto;
+    margin-top: 20px; 
+}
+

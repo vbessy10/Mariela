@@ -17,14 +17,17 @@
                     <img src="img/logo-AA.png" alt="Santiago" id="img-logo">
                 </a>
             </div>  
-            <form class="form-signin">
+            <form class="form-signin" id="form-signin">
                 <h1 class="h1 mb-3 font-weight-normal">Inicia Sesión</h1>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Correo" autofocus>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña">
+                <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Correo" autofocus>
+                <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Contraseña">
                 <div class="checkbox mb-3">
                     <label id="recuerdame">
                         <input type="checkbox" value="remember-me"> Recúerdame
                     </label>
+                </div>
+                <div class="alert alert-warning respuesta">
+                    <strong>¡Correo o contraseña incorecto!</strong>
                 </div>
                 <button type="button" class="btn btn-lg btn-success btn-block" id="btn-login">Iniciar Sesión</button>
                 <p>
