@@ -34,6 +34,7 @@ for(let i=0;i<campos.length;i++){
       $('#a-paginas').addClass('active');
       $('#paginas').removeClass('oculto');
       $('#paginas').addClass('mostrar');
+      CargarPaginas();
     }
 
     if(campos[i] == 'a-escritorio'){
@@ -376,6 +377,7 @@ function CargarEntradas(){
 }
 
 function anexarPostFila(post){
+  //console.log(post);
   let date = post.fecha;
   date = date.split(" ");
   let mes = date[1];
@@ -386,7 +388,7 @@ function anexarPostFila(post){
     `<tr id="${post._id}">
         <td class="checkbox"><input type="checkbox"></td>
         <td><a href="vista_post.html?id=${post._id}" target="_blank" class="td-a">${post.titulo}</a></td>
-        <td>${post.autor}</td>
+        <td>${post.autor[0].nombre} ${post.autor[0].apellido}</td>
         <td>${post.categoria.categoria}</td>
         <td>${dia}-${mes}-${anio}</td>
         <td><button type="button" onclick="eliminarPost('${post._id}')" title="Eliminar"><i class="fas fa-trash-alt i-eliminar"></i></button></td>
@@ -407,3 +409,149 @@ function eliminarPost(id){
     }
   });
 }
+
+$('#agregar-pagina').click(()=>{
+  $('.mostrar').addClass('oculto');
+  $('.mostrar').removeClass('mostrar');
+  $('#add-pagina').removeClass('oculto');
+  $('#add-pagina').addClass('mostrar'); 
+  $.ajax({
+    url:'admin/pagina.html',
+    method:'GET',
+    dataType:'html',
+    success:(res)=>{
+      $('#add-pagina').html(res);
+    },
+    error:(error)=>{
+      console.error(error);
+    }
+  });
+});
+
+function CargarPaginas(){
+  document.getElementById('tbl-paginas').innerHTML = '';
+  
+  $.ajax({
+    url:'paginas/',
+    method:'GET',
+    dataType:'json',
+    success:(res)=>{
+      //console.log(res);
+      document.getElementById('tbl-paginas').innerHTML = '';
+      for (let i = 0; i < res.length; i++) {
+        anexarPaginaFila(res[i]);
+      }
+    },
+    error:(error)=>{
+        console.error(error);
+    }
+  });
+}
+
+function anexarPaginaFila(pagina){
+  //console.log(pagina);
+  let date = pagina.fecha;
+  date = date.split(" ");
+  let mes = date[1];
+  let dia = date[2];
+  let anio = date[3];
+  //console.log(date);
+  document.getElementById('tbl-paginas').innerHTML += 
+    `<tr id="${pagina._id}">
+        <td class="checkbox"><input type="checkbox"></td>
+        <td><a href="vista_pagina.html?id=${pagina._id}" target="_blank" class="td-a">${pagina.titulo}</a></td>
+        <td>${pagina.autor[0].nombre} ${pagina.autor[0].apellido}</td>
+        <td>${dia}-${mes}-${anio}</td>
+        <td><button type="button" onclick="eliminarPagina('${pagina._id}')" title="Eliminar"><i class="fas fa-trash-alt i-eliminar"></i></button></td>
+    </tr>`;
+}
+
+function eliminarPagina(id){
+  $.ajax({
+    url:`paginas/${id}`,
+    method:'delete',
+    dataType:'json',
+    success:(res)=>{
+        if (res.ok == 1)
+            $(`#${id}`).remove();
+    },
+    error:(error)=>{
+        console.error(error);
+    }
+  });
+}
+
+Dropzone.autoDiscover = false;
+var medio = new Dropzone('#medio-dropzone', {
+  method:'POST',
+  previewTemplate: document.querySelector('#preview-template').innerHTML,
+  parallelUploads: 2,
+  thumbnailHeight: 120,
+  thumbnailWidth: 120,
+  maxFilesize: 10,
+  filesizeBase: 10,
+  thumbnail: function(file, dataUrl) {
+    //console.log(file.type);
+    if (file.previewElement) {
+      file.previewElement.classList.remove("dz-file-preview");
+      var med = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
+      for (var i = 0; i < med.length; i++) {
+        var thumbnailElement = med[i];
+        thumbnailElement.alt = file.name;
+        thumbnailElement.src = dataUrl;
+      }
+      setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
+    }
+  }
+});
+
+  var minSteps = 6,
+      maxSteps = 60,
+      timeBetweenSteps = 100,
+      bytesPerStep = 100000;
+
+
+  medio.uploadFiles = function(files) {
+
+    var self = this;
+  
+    for (var i = 0; i < files.length; i++) {
+  
+      var file = files[i];
+      //console.log('file= '+JSON.stringify(file));
+      totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
+  
+      for (var step = 0; step < totalSteps; step++) {
+        var duration = timeBetweenSteps * (step + 1);
+        setTimeout(function(file, totalSteps, step) {
+          return function() {
+            
+            file.upload = {
+              progress: 100 * (step + 1) / totalSteps,
+              total: file.size,
+              bytesSent: (step + 1) * file.size / totalSteps
+            };
+  
+            self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
+            if (file.upload.progress == 100) {
+              file.status = Dropzone.SUCCESS;
+              self.emit("success", file, 'success', null);
+              self.emit("complete", file);
+              self.processQueue();
+              GuargarFile(file);
+              //document.getElementsByClassName("dz-success-mark").style.opacity = "1";
+            }
+          };
+        }(file, totalSteps, step), duration);
+      }
+    }
+  };
+
+  function GuargarFile(file){
+    //console.log(JSON.stringify(file));
+    console.log('file= '+file.type);
+    console.log('name= '+file.name);
+    console.log('size= '+file.size);
+    console.log('file= '+Object.values(file));
+  }
+

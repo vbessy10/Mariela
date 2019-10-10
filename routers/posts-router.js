@@ -1,15 +1,16 @@
 var express = require('express');
 var entrada = require('../models/post');
 var router = express.Router();
+var mongoose = require('mongoose');
 
 //Registrar una entrada
 router.post('/',function(req,res){
     let e = new entrada({
         titulo:req.body.titulo,
-        autor:req.body.autor,
+        autor:mongoose.Types.ObjectId(req.body.autor),
         fecha:req.body.fecha,
         categoria:{
-            idCategoria:req.body.idCategoria,
+            idCategoria:mongoose.Types.ObjectId(req.body.idCategoria),
             categoria:req.body.categoria
         },
         comentarios:req.body.vComentario,
@@ -54,7 +55,17 @@ router.get('/:id',function(req,res){
 
 //Obtener todos los posts
 router.get('/',function(req,res){
-    entrada.find()
+    //entrada.find()
+    entrada.aggregate([
+        {
+            $lookup:{
+                from:"usuarios",
+                localField:"autor",
+                foreignField:"_id", 
+                as:"autor"
+            }
+        }
+    ])
     .then((data)=>{
         res.send(data);
         res.end();

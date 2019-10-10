@@ -214,6 +214,7 @@ body {
 }
 .card-body{
   padding: 3px;
+  background-color: #e5e5e53d;
 }
 section{
   padding: 50px 0;
@@ -287,4 +288,34 @@ form .form-control{
 }
 .i-eliminar{
   margin: auto;
+}
+.centrar{
+  text-align: center;
+}
+.hr{
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.dropzone{
+  border-radius: 5px;
+  background: #ced4da17 !important;
+  width: 90%;
+  margin: auto;
+}
+.fa-cloud-upload-alt{
+  font-size: 48px;
+  width: auto;
+  margin: auto;
+  color: #f7c500eb;
+  /*color: #01233f;*/
+}
+.btn-primary{
+  color: #ffffff;
+  background-color: #f7c500 !important;
+  border-color: #f7c500;
+}
+.btn-secondary{
+  color: #ffffff;
+  background-color: #01233f !important;
+  border-color: #01233f;
 }

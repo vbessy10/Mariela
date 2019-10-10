@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var esquema = new mongoose.Schema({
     titulo:String,
-    autor:String,
+    autor:mongoose.Types.ObjectId,
     fecha:String,
     categoria:mongoose.SchemaTypes.Mixed, 
     comentarios:String, 

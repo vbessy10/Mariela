@@ -61,25 +61,34 @@ function IniciarSesion(){
     if (usuario==null || usuario == undefined)
         return;
     
+    var formLogin = document.querySelector('#form-signin');
+    var formData = new FormData(formLogin);
+    //console.log(formData.values);
+    /*formLogin.addEventListener('submit', event =>{
+        event.preventDefault();
+        fetch('usuarios/private/login',{
+            method: 'POST',
+            body:formData
+        })
+        .then(res => res.json())
+        .then(data => console.log('data= '+data))
+    });*/
+    
+
     $.ajax({
-        url:`usuarios/correo/${$('#inputEmail').val()}`,
+        url:`usuarios/login/${$('#inputEmail').val()}/${$('#inputPassword').val()}`,
         method:'GET',
         dataType:'json',
+        body:formData,
         success:(res)=>{ 
-            /*
-            for (let i = 0; i < res.length; i++) {
-                console.log(res[i]);  
-            }
-            */
-            if (res.contrasenia == $('#inputPassword').val()){
+            console.log(res);
+            if (res){
                 location.href='../admin.html';
             }else{
                 $('#inputEmail').addClass('is-invalid');
                 $('#inputPassword').addClass('is-invalid');
                 $('.respuesta').fadeIn(100);
             }
-                /*
-                setTimeout (()=>{location.href='../admin.html'}, 1000);}*/
         },
         error:(error)=>{
             $('#inputEmail').addClass('is-invalid');

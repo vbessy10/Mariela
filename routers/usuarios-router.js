@@ -1,6 +1,16 @@
 var express = require('express');
 var usuario = require('../models/usuario');
+var cotrol = require('../controlles/control');
+var session = require('express-session');
+var auth = require('../middlewares/auth');
 var router = express.Router();
+
+var app = express();
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true
+}));
 
 //Registrar un usuario
 router.post('/',function(req,res){
@@ -10,7 +20,7 @@ router.post('/',function(req,res){
         req.body.tipo=0;
         req.body.tUsuario='Administrador';
     }
-    
+
     let user = new usuario({
         nombre:req.body.nombre,
         apellido:req.body.apellido,
@@ -61,10 +71,13 @@ router.get('/:id',function(req,res){
     });
 });
 
+
+
 //Obtener un usuario de login
-router.get('/correo/:correo',function(req,res){
-    usuario.find({correo:req.params.correo})
+router.get('/login/:correo/:contrasenia',function(req,res){
+    usuario.find({correo:req.params.correo, contrasenia:req.params.contrasenia})
     .then((data)=>{
+        req.session.user_id = data[0]._id
         res.send(data[0]);
         res.end();
     })
@@ -104,7 +117,7 @@ router.put('/:id',function(req,res){
             nombre:req.body.acNombre,
             apellido:req.body.acApellido,
             correo:req.body.acEmail,
-            contrasenia:req.body.acPassword,
+            contrasenia:req.body.contrasenia,
             fechaNacimiento:req.body.acNacimiento,
             tipoUsuario:{
                 id:req.body.acTipo,
@@ -122,5 +135,12 @@ router.put('/:id',function(req,res){
         res.end();
    });
 });
+
+// para la validacion de usuarios
+/*router.get('/private/login', auth, function(req, res){
+    res.status(200).send({ message: 'Acceso autorizado' })
+});*/
+
+router.post('/private/login', cotrol.inicioSesion);
 
 module.exports = router;
