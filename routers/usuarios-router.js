@@ -27,7 +27,7 @@ router.post('/',function(req,res){
         usuario:req.body.usuario,
         correo:req.body.correo,
         genero:req.body.genero,
-        contrasenia:req.body.contrasenia,
+        contrasenia:req.body.acPassword,
         fechaNacimiento:req.body.nacimiento,
         tipoUsuario:{
             id:req.body.tipo,
